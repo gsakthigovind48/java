@@ -1,0 +1,42 @@
+CODE:
+class Book {
+    String title;
+    String author;
+
+    Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+
+    void displayBook() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+    }
+}
+
+class Library extends Book {
+    String libraryName;
+
+    Library(String title, String author, String libraryName) {
+        super(title, author);
+        this.libraryName = libraryName;
+    }
+
+    void displayLibraryDetails() {
+        displayBook();
+        System.out.println("Library: " + libraryName);
+    }
+}
+
+public class LibraryDemo {
+    public static void main(String[] args) {
+        Library lib = new Library("Java Programming", "Herbert Schildt", "City Central Library");
+        lib.displayLibraryDetails();
+    }
+}
+
+
+OUTPUT:
+Title: Java Programming
+Author: Herbert Schildt
+Library: City Central Library

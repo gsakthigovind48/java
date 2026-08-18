@@ -1,0 +1,38 @@
+PROGRAM:
+
+class Course {
+    static int totalRegistrations = 0; // static member
+
+    String studentName;
+    String courseName;
+
+    Course(String studentName, String courseName) {
+        this.studentName = studentName;
+        this.courseName = courseName;
+        totalRegistrations++;
+    }
+
+    void displayRegistration() {
+        System.out.println("Student: " + studentName);
+        System.out.println("Course: " + courseName);
+    }
+}
+
+public class CourseRegistrationDemo {
+    public static void main(String[] args) {
+        Course c1 = new Course("Meena Iyer", "Data Structures");
+        Course c2 = new Course("Arjun Nair", "Java Programming");
+
+        c1.displayRegistration();
+        c2.displayRegistration();
+
+        System.out.println("Total Registrations: " + Course.totalRegistrations);
+    }
+}
+
+OUTPUT:
+Student: Meena Iyer
+Course: Data Structures
+Student: Arjun Nair
+Course: Java Programming
+Total Registrations: 2

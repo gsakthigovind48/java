@@ -1,0 +1,26 @@
+Program: 
+class StudentData<T> {
+private T data;    
+public void setData(T data) {
+  this.data = data;
+}
+public T getData() {
+  return data;
+   }
+}
+
+public class Main {    
+public static void main(String[] args) {
+  StudentData<String> name = new StudentData<>(); 
+  name.setData("Anitha"); 
+  System.out.println("Name: " + name.getData()); 
+
+   StudentData<Integer> marks = new StudentData<>();     
+  marks.setData(89); 
+  System.out.println("Marks: " + marks.getData());
+}
+}
+
+Output: 
+Name: Anitha
+Marks: 89

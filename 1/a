@@ -1,0 +1,39 @@
+CODE:
+
+class BankAccount {
+    String accHolder;
+    double balance;
+
+    // Default constructor
+    BankAccount() {
+        accHolder = "RIYA";
+        balance = 500.0;
+    }
+
+    // Parameterized constructor
+    BankAccount(String accHolder, double balance) {
+        this.accHolder = accHolder;
+        this.balance = balance;
+    }
+
+    void display() {
+        System.out.println("Account Holder: " + accHolder);
+        System.out.println("Balance: " + balance);
+    }
+}
+
+public class BankAccountDemo {
+    public static void main(String[] args) {
+        BankAccount a1 = new BankAccount();
+        BankAccount a2 = new BankAccount("Anita Sharma", 15000.0);
+        a1.display();
+        a2.display();
+    }
+}
+
+OUTPUT:
+
+Account Holder: Unknown
+Balance: 0.0
+Account Holder: Anita Sharma
+Balance: 15000.0

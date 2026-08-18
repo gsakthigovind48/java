@@ -1,0 +1,25 @@
+CODE:
+class ElectricityBill {
+    static double ratePerUnit = 7.5; // static rate shared by all instances
+
+    double units;
+
+    ElectricityBill(double units) {
+        this.units = units;
+    }
+
+    double calculateBill() {
+        return units * ratePerUnit;
+    }
+}
+
+public class ElectricityBillDemo {
+    public static void main(String[] args) {
+        ElectricityBill bill = new ElectricityBill(150);
+        System.out.println("Total Bill: Rs. " + bill.calculateBill());
+    }
+}
+
+OUTPUT
+;
+Total Bill: Rs. 1125.0

@@ -1,0 +1,32 @@
+CODE:
+
+class Product {
+    String name;
+    double price;
+
+    Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+}
+
+public class ShoppingCartDemo {
+    public static void main(String[] args) {
+        Product[] cart = new Product[3];
+        cart[0] = new Product("Notebook", 60.0);
+        cart[1] = new Product("Pen", 10.0);
+        cart[2] = new Product("Bag", 750.0);
+
+        double total = 0;
+        for (Product p : cart) {
+            System.out.println(p.name + " - Rs. " + p.price);
+            total += p.price;
+        }
+        System.out.println("Total Cart Value: Rs. " + total);
+    }
+}
+OUTPUT:
+Notebook - Rs. 60.0
+Pen - Rs. 10.0
+Bag - Rs. 750.0
+Total Cart Value: Rs. 820.0

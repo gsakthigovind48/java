@@ -1,0 +1,24 @@
+Program: 
+interface Device {  
+void operate();
+}
+class Light implements Device, Runnable { 
+public void operate() { System.out.println("Light is ON"); }
+public void run() { operate(); }
+}
+class Fan implements Device, Runnable {
+public void operate() { System.out.println("Fan is ON");}
+public void run() { operate();}
+}
+public class Main { 
+public static void main(String[] args) {    
+Thread t1 = new Thread(new Light());    
+Thread t2 = new Thread(new Fan()); 
+t1.start();  
+t2.start();    
+}
+}
+
+Output:
+Light is ON 
+Fan is ON

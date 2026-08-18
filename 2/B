@@ -1,0 +1,49 @@
+Program: 
+class NumberPrinter {   
+public synchronized void printOdd(int n) {    
+System.out.println("Odd: " + n); 
+}
+public synchronized void printEven(int n) {     
+System.out.println("Even: " + n);    
+}
+}
+class OddThread extends Thread {  
+NumberPrinter np;    
+OddThread(NumberPrinter np) {
+this.np = np; 
+}
+public void run() {  
+for (int i = 1; i <= 10; i += 2)
+np.printOdd(i); 
+}
+}
+class EvenThread extends Thread { 
+NumberPrinter np; 
+EvenThread(NumberPrinter np) { 
+this.np = np; 
+}
+public void run() {  
+for (int i = 2; i <= 10; i += 2) 
+np.printEven(i);  
+}
+}
+public class Main { 
+public static void main(String[] args) { 
+NumberPrinter np = new NumberPrinter();       
+new OddThread(np).start();   
+new EvenThread(np).start();
+}
+}
+
+
+Output: 
+Odd: 1
+Even: 2 
+Odd: 3
+Even: 4
+Odd: 5
+Even: 6 
+Odd: 7 
+Even: 8 
+Odd: 9
+Even: 10

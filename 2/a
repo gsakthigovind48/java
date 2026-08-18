@@ -1,0 +1,32 @@
+PROGRAM:
+interface BankOperations {   
+void deposit(double amount);
+void withdraw(double amount); 
+}
+class Account implements BankOperations {
+double balance = 1000; 
+public void deposit(double amount) {   
+balance += amount; 
+System.out.println("Deposited: " + amount + " | Balance: " + balance); 
+}
+public void withdraw(double amount) { 
+if (amount <= balance) { 
+balance -= amount;    
+System.out.println("Withdrawn: " + amount + " | Balance: " + balance); 
+}
+else {   
+System.out.println("Insufficient balance");    
+}
+}
+}
+public class Main { 
+public static void main(String[] args) {    
+Account acc = new Account(); 
+
+acc.deposit(500);
+acc.withdraw(300);  
+}
+}
+Output: 
+Deposited: 500.0 | Balance: 1500.0 
+Withdrawn: 300.0 | Balance: 1200.0

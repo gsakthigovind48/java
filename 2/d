@@ -1,0 +1,18 @@
+Program:
+
+public class Main {    
+  public static void main(String[] args) {   
+    int price = 1500;     
+    Integer boxedPrice = price;        
+    int unboxedPrice = boxedPrice;   
+
+  System.out.println("Autoboxed: " + boxedPrice);  
+  System.out.println("Unboxed: " + unboxedPrice);
+
+  }
+}
+
+  
+Output: 
+Autoboxed: 1500 
+Unboxed: 1500
